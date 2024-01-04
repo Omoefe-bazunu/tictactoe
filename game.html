@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tictactoe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8296ca258d.js" crossorigin="anonymous"></script>
+    
+</head>
+<body class="flex justify-center items-center bg-slate-900">
+    <main class=" flex flex-col h-screen gap-y-3 justify-center items-center p-2 md:p-5 bg-slate-900">
+        <div class="grid grid-cols-3 mb-7">
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-b border-r border-neutral-50" id="b1" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-b border-r border-neutral-50" id="b2" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-b border-neutral-50" id="b3" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-b border-r border-neutral-50" id="b4" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-b border-r border-neutral-50" id="b5" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-b border-neutral-50" id="b6" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-r border-neutral-50" id="b7" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-r border-neutral-50" id="b8" ></div>
+            <div class="box w-24 h-24 bg-slate-900  text-center text-4xl text-white p-2 border-neutral-50" id="b9" ></div>
+        </div>
+        <div class="flex flex-wrap justify-between items-center w-full gap-x-2">
+            <button type="button" class=" grow rounded-md bg-slate-800 text-center text-white p-2 drop-shadow-md cursor-pointer" id="reset"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+            <button type="button" class=" grow rounded-md bg-slate-800 text-center text-white p-2 drop-shadow-md cursor-pointer" id="play"><i class="fa-solid fa-play"></i></button>
+            <button type="button" class=" grow rounded-md bg-slate-800 text-center text-white p-2 drop-shadow-md cursor-pointer" id="pause"><i class="fa-solid fa-pause"></i></button>
+        </div>
+        <form class=" flex flex-col gap-y-3 w-full ">
+            <label for="timerOpt" class="w-full p-2 text-center text-white bg-slate-800 font-thin">Set Timer</label>
+            <select name="timer" id="timerOpt" class="w-full rounded-sm outline-none text-center text-slate-300 p-2 bg-slate-500 font-thin">
+                <option value="5">5 mins</option>
+                <option value="10">10 mins</option>
+                <option value="15">15 mins</option>
+            </select>
+            <div class="w-full h12 bg-slate-900 p-2 text-center text-white font-thin" data-target="600000" id="timerDisplay">0</div>
+        </form>
+    </main>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>

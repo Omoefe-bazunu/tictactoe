@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+button:hover {
+    transition: transform 2.5s;
+
+    transform: scale(0.9);
+}
+
+.box:hover {
+ cursor: pointer;
+}
