@@ -14,54 +14,40 @@ let allBoxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset");
 let playBtn = document.querySelector("#play");
 let pauseBtn = document.querySelector("#pause");
-const timerOption = document.querySelector("#timerOpt");
+const timerOption = document.querySelector("#timer");
 const timerDisplay = document.querySelector("#timerDisplay");
 const counterSpeed = 1000;
 const pin = [ "O", "X"];
 audio.src = 'bgsong.mp3';
 const isplaying = arena.classList.contains('play');
 
-// function for the timer
-const startTime = () => {
-    const target = +timerDisplay.getAttribute('data-target');
-    const timerDisplayStore = +timerDisplay.innerHTML;
 
-    const increment = target/counterSpeed;
+function startTime(targetlime) {
+    const currentTime = new Date().getTime();     // Get the current time in milliseconds
+    const targetTime = currentTime + (targetlime * 60 * 1000);    // Calculate the time 5 minutes from now (in milliseconds)
+   // Update timer display every second
+   const timerInterval = setInterval(function() {
+    const timeRemaining = targetTime - new Date().getTime();     // Calculate the remaining time
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));     // Convert remaining time to minutes and seconds
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    timerDisplay.innerHTML = `${minutes} : ${seconds}`;     // Display the remaining time
 
-    if(timerDisplayStore < target) {
-        timerDisplay.innerHTML = timerDisplayStore + increment;
-        setTimeout(startTime, 1)
-    } else {
-        timerDisplayStore.innerHTML = target;
+    // Check if the countdown is finished
+    if (timeRemaining <= 0) {
+        clearInterval(timerInterval); // Stop the timer
+        timerDisplay.innerHTML = "00:00";
+        
     }
+}, 1000); // Update every second
 }
 
-
-
 const checkTime = () => {
-//     switch(timerOption.value){
-// 	case 5:
-//         target = 300000;
-//         counterSpeed = 1000;
-//         startTime();
-//         break;
-// 	case 10:
-//         break;
-// 	case 15:
-//         break;
-// 	default: 
-//             alert('TRUE');
-// }
-
-if(timerOption.value = 5) {
-    timerDisplay.setAttribute('data-target', '300000')
-    startTime();
-} else if (timerOption.value = 10) {
-    timerDisplay.setAttribute('data-target', '600000')
-    startTime();
-} else if (timerOption.value = 15) {
-    timerDisplay.setAttribute('data-target', '900000')
-    startTime();
+if(timerOption.value == 5) {
+    startTime(5);
+} else if (timerOption.value == 10) {
+    startTime(10);
+} else if (timerOption.value == 15) {
+    startTime(15);
 }
 };
 

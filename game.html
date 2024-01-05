@@ -29,14 +29,14 @@
             <button type="button" class=" grow rounded-md bg-slate-800 text-center text-white p-2 drop-shadow-md cursor-pointer" id="pause"><i class="fa-solid fa-pause"></i></button>
         </div>
         <form class=" flex flex-col gap-y-3 w-full ">
-            <label for="timerOpt" class="w-full p-2 text-center text-white bg-slate-800 font-thin">Set Timer</label>
-            <select name="timer" id="timerOpt" class="w-full rounded-sm outline-none text-center text-slate-300 p-2 bg-slate-500 font-thin">
+            <label for="timer" class="w-full p-2 text-center text-white bg-slate-800 font-thin">Set Timer</label>
+            <select name="timer" id="timer" class="w-full rounded-sm outline-none text-center text-slate-300 p-2 bg-slate-500 font-thin">
                 <option value="0">None</option>
                 <option value="5">5 mins</option>
                 <option value="10">10 mins</option>
                 <option value="15">15 mins</option>
             </select>
-            <div class="w-full h12 bg-slate-900 p-2 text-center text-white font-thin"  id="timerDisplay">0</div>
+            <div class="w-full h12 bg-slate-900 p-2 text-center text-white font-thin"  id="timerDisplay">00:00</div>
         </form>
         <audio src="bgsong.mp3" id="audio"></audio>
     </main>
