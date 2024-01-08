@@ -77,14 +77,17 @@ b1.addEventListener('click', () => {
     } else if (b4.innerHTML == pin[0] && !b7.innerHTML) {
         b7.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
-    } else if (!b4.innerHTML && !b7.innerHTML == pin[0]) {
+    } else if (!b4.innerHTML && b7.innerHTML == pin[0]) {
         b4.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
-    } else if (!b5.innerHTML && !b9.innerHTML == pin[0]) {
+    } else if (!b5.innerHTML && b9.innerHTML == pin[0]) {
         b5.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else if (b5.innerHTML == pin[0] && !b9.innerHTML) {
         b9.innerHTML = pin[1];
+        setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
+    } else if (!b5.innerHTML && !b9.innerHTML) {
+        b5.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else if (!b2.innerHTML && !b3.innerHTML){
         b2.innerHTML = pin[1];
@@ -92,14 +95,11 @@ b1.addEventListener('click', () => {
     } else if (!b4.innerHTML && !b7.innerHTML){
         b4.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
-    } else if (b5.innerHTML && !b9.innerHTML) {
-        b5.innerHTML = pin[1];
-        setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -131,7 +131,7 @@ b2.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -172,7 +172,7 @@ b3.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -204,7 +204,7 @@ b4.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -254,7 +254,7 @@ b5.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -286,7 +286,7 @@ b6.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -327,7 +327,7 @@ b7.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -359,7 +359,7 @@ b8.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -400,7 +400,7 @@ b9.addEventListener('click', () => {
         allBoxes.forEach(box => { 
             if(!box.innerHTML) { 
                 box.innerHTML = pin[1];
-                alert("SUCH IS LIFE") }})
+                alert("CONGRATULATIONS PAL! YOU WIN") }})
     }
 }, 1000)
 
@@ -431,45 +431,7 @@ resetBtn.addEventListener('click', () => {
 
 
 
-// const winOrTie = () => {if(b1.innerHTML == pin[0] && b2.innerHTML == pin[0] && b3.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b1.innerHTML == pin[0] && b5.innerHTML == pin[0] && b9.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b1.innerHTML == pin[0] && b4.innerHTML == pin[0] && b7.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b2.innerHTML == pin[0] && b5.innerHTML == pin[0] && b8.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b3.innerHTML == pin[0] && b5.innerHTML == pin[0] && b7.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b7.innerHTML == pin[0] && b8.innerHTML == pin[0] && b9.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b4.innerHTML == pin[0] && b5.innerHTML == pin[0] && b6.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else if (b3.innerHTML == pin[0] && b6.innerHTML == pin[0] && b9.innerHTML == pin[0]) {
-// alert ("Congratulations! you win");
-// } else { 
-// 	if(b1.innerHTML == pin[1] && b2.innerHTML == pin[1] && b3.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b1.innerHTML == pin[1] && b5.innerHTML == pin[1] && b9.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b1.innerHTML == pin[1] && b4.innerHTML == pin[1] && b7.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b2.innerHTML == pin[1] && b5.innerHTML == pin[1] && b8.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b3.innerHTML == pin[1] && b5.innerHTML == pin[1] && b7.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b7.innerHTML == pin[1] && b8.innerHTML == pin[1] && b9.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b4.innerHTML == pin[1] && b5.innerHTML == pin[1] && b6.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else if (b3.innerHTML == pin[1] && b6.innerHTML == pin[1] && b9.innerHTML == pin[1]) {
-// 		alert ("Sorry, you lose");
-// 	} else { 
-// 		alert ("Its a TIE");
-// 		}
-// }
 
-// };
 
 // winOrTie();
 
