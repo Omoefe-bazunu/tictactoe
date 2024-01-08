@@ -64,6 +64,51 @@ let b7 = document.querySelector("#b7");
 let b8 = document.querySelector("#b8");
 let b9 = document.querySelector("#b9");
 
+const checkLoss = () => { 
+if (b1.innerHTML == pin[1] && b2.innerHTML == pin[1] && b3.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b1.innerHTML == pin[1] && b4.innerHTML == pin[1] && b7.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b1.innerHTML == pin[1] && b5.innerHTML == pin[1] && b9.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b2.innerHTML == pin[1] && b5.innerHTML == pin[1] && b8.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b3.innerHTML == pin[1] && b5.innerHTML == pin[1] && b7.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b3.innerHTML == pin[1] && b6.innerHTML == pin[1] && b9.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b4.innerHTML == pin[1] && b5.innerHTML == pin[1] && b6.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else if (b7.innerHTML == pin[1] && b8.innerHTML == pin[1] && b9.innerHTML == pin[1]) {
+    alert('SORRY PAL! YOU LOSE');
+} else (
+    alert('ITS A TIE! PLAY AGAIN?')
+)
+};
+
+const winOrLoss = () => {
+    if(b1.innerHTML == pin[0] && b2.innerHTML == pin[0] && b3.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b1.innerHTML == pin[0] && b4.innerHTML == pin[0] && b7.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b1.innerHTML == pin[0] && b5.innerHTML == pin[0] && b9.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b2.innerHTML == pin[0] && b5.innerHTML == pin[0] && b8.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b3.innerHTML == pin[0] && b5.innerHTML == pin[0] && b7.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b3.innerHTML == pin[0] && b6.innerHTML == pin[0] && b9.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b4.innerHTML == pin[0] && b5.innerHTML == pin[0] && b6.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else if (b7.innerHTML == pin[0] && b8.innerHTML == pin[0] && b9.innerHTML == pin[0]) {
+        alert('CONGRATULATIONS PAL! YOU WIN');
+    } else {
+        checkLoss();
+    }
+};
+
+
 //Event listener for button 1
 
 b1.addEventListener('click', () => {
@@ -96,10 +141,7 @@ b1.addEventListener('click', () => {
         b4.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -128,10 +170,7 @@ b2.addEventListener('click', () => {
         b5.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -169,10 +208,7 @@ b3.addEventListener('click', () => {
         b5.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -201,10 +237,7 @@ b4.addEventListener('click', () => {
         b7.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -251,10 +284,7 @@ b5.addEventListener('click', () => {
         b3.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -283,10 +313,7 @@ b6.addEventListener('click', () => {
         b4.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     }  else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -324,10 +351,7 @@ b7.addEventListener('click', () => {
         b3.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -356,10 +380,7 @@ b8.addEventListener('click', () => {
         b2.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     }  else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
@@ -397,17 +418,15 @@ b9.addEventListener('click', () => {
         b1.innerHTML = pin[1];
         setTimeout(() => {alert("YOUR TURN PAL")}, 1000);
     } else {
-        allBoxes.forEach(box => { 
-            if(!box.innerHTML) { 
-                box.innerHTML = pin[1];
-                alert("CONGRATULATIONS PAL! YOU WIN") }})
+        winOrLoss();
     }
 }, 1000)
 
 })
 
- };
+};
 
+// codes fpr the button actions 
 
 playBtn.addEventListener('click', () => {
     if(!isplaying) {
@@ -428,6 +447,7 @@ pauseBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     clearArena();
 })
+
 
 
 
